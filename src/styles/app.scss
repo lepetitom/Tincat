@@ -1,4 +1,42 @@
-$color: red;
+$logotypo: 'Pacifico', cursive;
+$Maintypo: 'Petrona', serif;
+
+
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form_container form{
+    display: flex;
+    flex-direction: column;
+}
+.form_container input{
+    padding: 20px;
+    font-size: 1.8rem;
+    border: none;
+    border-bottom: 1px solid; 
+    font-family: $Maintypo;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    font-family: $Maintypo;
+}
 h1{
-    color: $color;
+    font-family: $logotypo;
+}
+h2{
+    font-family: $Maintypo;
+}
+.formulaire{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

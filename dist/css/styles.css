@@ -1,5 +1,45 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_container input {
+  padding: 20px;
+  font-size: 1.8rem;
+  border: none;
+  border-bottom: 1px solid;
+  font-family: "Petrona", serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  font-family: "Petrona", serif;
+}
+
 h1 {
-  color: red;
+  font-family: "Pacifico", cursive;
+}
+
+h2 {
+  font-family: "Petrona", serif;
+}
+
+.formulaire {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=styles.css.map */
