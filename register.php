@@ -1,13 +1,13 @@
 <?php require "head.php"; ?>
 
 <body>
-    <div class="formulaire">
-
+    <div class="form-container">
         <h1>TINCAT</h1>
-        <h2>Inscrire son chat</h2>
-        <form action="" class="form_container">
-            <input type="text" placeholder="pseudo">
-            <input type="text" placeholder="password">
+        <form action="functions/setUser.php" method="post">
+            <input type="text" placeholder="pseudo" name="pseudo">
+            <input type="email" placeholder="email" name="email">
+            <input type="password" placeholder="password" name="password">
+            <input type="Password" placeholder="confirmation password" name="confirmPassword">
             <input type="submit" value="register">
         </form>
     </div>
