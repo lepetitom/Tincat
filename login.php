@@ -16,7 +16,7 @@
                 ?>
             </div>
         </form>
-            <a href="resgister.php">Pas encore de compte</a>
+            <a href="register.php">Pas encore de compte</a>
     </div>
 
 </body>
