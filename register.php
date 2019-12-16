@@ -18,6 +18,7 @@
                 ?>
             </div>
         </form>
+            <a href="login.php">Se connecter</a>
     </div>
 
 </body>

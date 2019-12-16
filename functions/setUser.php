@@ -1,20 +1,8 @@
 <?php
 //Thomas
 // Etape 1 : config database
-$DB_HOST = "localhost";
-$DB_NAME = "tincat";
-$DB_USER = "root";
-$DB_PASSWORD = "";
+require("database.php");
 
-
-
-// Etape 2 : Connexion to database
-try {
-    $db = new PDO("mysql:host=$DB_HOST;dbname=$DB_NAME", $DB_USER, $DB_PASSWORD);
-} catch (PDOException $e) {
-    print "Erreur !: " . $e->getMessage() . "<br/>";
-    die();
-}
 var_dump($_POST);
 // Avant d'insérer en base de données faire les vérifications suivantes
 // Vérifier si le pseudo ou le mot de passe est vide
