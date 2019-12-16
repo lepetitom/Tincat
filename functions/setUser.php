@@ -1,5 +1,5 @@
 <?php
-
+//Thomas
 // Etape 1 : config database
 $DB_HOST = "localhost";
 $DB_NAME = "tincat";
