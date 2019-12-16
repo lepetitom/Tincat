@@ -29,6 +29,7 @@ p {
 
 h1 {
   font-family: "Pacifico", cursive;
+  text-align: center;
 }
 
 h2 {
@@ -40,6 +41,13 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.message {
+  color: red;
+  font-size: 20px;
+  font-family: "Petrona", serif;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

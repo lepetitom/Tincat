@@ -30,6 +30,7 @@ p{
 }
 h1{
     font-family: $logotypo;
+    text-align: center;
 }
 h2{
     font-family: $Maintypo;
@@ -39,4 +40,11 @@ h2{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.message{
+    color: red;
+    font-size: 20px;
+    font-family: $Maintypo;
+    text-align: center;
 }

@@ -9,7 +9,16 @@
             <input type="password" placeholder="password" name="password">
             <input type="Password" placeholder="confirmation password" name="confirmPassword">
             <input type="submit" value="register">
+           
+            <div class="message">
+                <?php
+                    if( isset($_GET["message"])){
+                        echo $_GET["message"];
+                    }
+                ?>
+            </div>
         </form>
     </div>
+
 </body>
 </html>

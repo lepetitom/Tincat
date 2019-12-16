@@ -18,25 +18,36 @@ try {
 var_dump($_POST);
 // Avant d'insérer en base de données faire les vérifications suivantes
 // Vérifier si le pseudo ou le mot de passe est vide
-if(empty($_POST["password"])){
-    echo "<h1>Mot de passe invalide</h1>";
-    //action 
-}elseif($_POST["password"] != $_POST["confirmPassword"]){
-    // Ajouter un input confirm password et vérifier si les deux sont égaux
-    echo "<h1>Mdp de confirmation non valide</h1>";
-}elseif(empty($_POST["email"])){
-    // vérifie le champ email
-    echo "<h1>email invalide</h1>";
-}elseif(empty($_POST["pseudo"])){
-    // vérifie le champ pseudo
-    echo "<h1>pseudo invalide</h1>";
-}else{
-    echo "<h1>Inscription confirmé</h1>";
-// Etape 3 : prepare request
-    $req = $db->prepare("INSERT INTO users (pseudo, password, email) VALUES(:pseudo, :password, :email)");
-    $req->bindParam(":pseudo", $_POST["pseudo"]);
-    $req->bindParam(":password", $_POST["password"]);
-    $req->bindParam(":email", $_POST["email"]);
-    $req->execute();
+
+$message = "";
+if(empty($_POST["password"]) && empty($_POST["pseudo"]) ){
+    $message = "Vous devez remplir les deux champs";
+    header("Location: ../register.php?message=$message");
+}else if ( empty($_POST["pseudo"]) || !empty($_POST["password"]) ){
+    $message = "Vous devez remplir un pseudo";
+    header("Location: ../register.php?message=$message");
+}else if ( !empty($_POST["pseudo"]) && empty($_POST["password"]) ){
+    $message = "Vous devez remplir un password";
+    header("Location: ../register.php?message=$message");
 }
+
+var_dump ($message);
+
+if( !empty($_POST["password"]) && !empty($_POST["confirmPassword"]) && !empty($_POST["pseudo"]) ){
+    //confirmation password  
+    if($_POST["password"] === $_POST["confirmPassword"]) {
+        //Prepare request
+        $req = $db->prepare("INSERT INTO users (pseudo, password, email) VALUES(:pseudo, :password, :email)");
+        $req->bindParam(":pseudo", $_POST["pseudo"]);
+        $req->bindParam(":password", $_POST["password"]);
+        $req->bindParam(":email", $_POST["email"]);
+        $req->execute();
+        $message = "Success create account";
+        header("Location: ../login.php?message=$message");
+    }else{
+        $message = "Password and confirPassword not egal";
+        header("Location: ../register.php?message=$message");
+    }
+}
+
 
