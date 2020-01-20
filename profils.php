@@ -13,16 +13,37 @@ require("head.php");
 <!-- Afficher les utilisateurs stocké dans le BDD sauf moi -->
 <!-- *************************************************** -->
 <
-<?php
-require("functions/database.php");
-$sth = $db->prepare("SELECT pseudo FROM users");
-$sth->execute();
+<div class="users">
 
-/* Récupération de toutes les lignes d'un jeu de résultats */
-print("Récupération de toutes les lignes d'un jeu de résultats :\n");
-$result = $sth->fetchAll();
-var_dump($result);
+    <?php
+    // Connect to database
+    require("functions/database.php");
+    // prepare request (select)
+    $sth = $db->prepare("SELECT id, pseudo FROM users WHERE pseudo <> :pseudo");
+    $sth->bindParam(":pseudo", $_SESSION["pseudo"]);
+    //$sth->bindParam(":id", $_SESSION["id"]);
+    // execute
+    $sth->execute();
+    /* Récupération de toutes les lignes d'un jeu de résultats
+    print("Récupération de toutes les lignes d'un jeu de résultats :\n");
+    $result = $sth->fetchAll();  */
 
+    while($result = $sth->fetch(PDO::FETCH_ASSOC)){
+        ?>
+        <div>
+            <strong>
+                <?= 
+                    "<h2>" . $result["pseudo"] . "</h2>"
+                    ?>
+            </strong>
+            <a href="functions/deleteUser.php?id=<?php echo $result["id"];?>">Supprimer</a>
+            <a href="ModifUser.php?id=<?php echo $result["id"];?>&pseudo=<?php echo $result["pseudo"];?>">modifier</a>
+        </div>
+    <?php
+    }
+    ?>
 
-echo "Bonjour " . $_SESSION["pseudo"];
-?>
+</div>
+
+<?php echo "Bonjour " . $_SESSION["pseudo"]; ?>
+

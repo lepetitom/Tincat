@@ -23,6 +23,7 @@ if( !empty($_POST["pseudo"]) && !empty($_POST["password"]) ){
     else{
         session_start();
         $_SESSION["pseudo"] = $result["pseudo"];
+        $_SESSION["id"] = $result["id"];
         header("Location: ../profils.php");
     }
 }

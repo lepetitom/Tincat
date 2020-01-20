@@ -4,10 +4,8 @@ $Maintypo: 'Petrona', serif;
 
 
 body{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0px;
+    padding: 0px;
 }
 .form_container form{
     display: flex;
@@ -31,6 +29,8 @@ p{
 h1{
     font-family: $logotypo;
     text-align: center;
+    font-size: 45px;
+    color: white;
 }
 h2{
     font-family: $Maintypo;
@@ -40,6 +40,7 @@ h2{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .message{
@@ -47,4 +48,35 @@ h2{
     font-size: 20px;
     font-family: $Maintypo;
     text-align: center;
+}
+.form-container{
+    background-color: rgb(255, 162, 219);
+    padding: 50px;
+    margin-right: 10%;
+    width: 50%;
+    height: 40%;
+    border-radius: 30px;
+}
+.containt{
+    width: 100%;
+    height: 100%;
+    background-image: url(../../img/chen-yi-wen--GzyUGKhjBY-unsplash.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.middle{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+    border: 0px;
 }
